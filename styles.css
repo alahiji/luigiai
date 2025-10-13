@@ -67,6 +67,16 @@ body {
 .logo img {
     height: 40px;
     width: auto;
+    transition: var(--transition);
+}
+
+/* Prominent logo on home page */
+.home-page .navbar .logo img {
+    height: 60px;
+}
+
+.home-page .navbar.scrolled .logo img {
+    height: 45px;
 }
 
 .nav-links {
@@ -602,22 +612,13 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .hero-visual {
         display: none;
     }
 
     .hero-content {
         max-width: 100%;
-    }
-}
-
-@media (max-width: 1200px) {
-    .hero-visual {
-        flex: 1 1 320px;
-        width: 320px;
-        height: 320px;
-        margin: 0 auto;
     }
 }
 @media (max-width: 768px) {
