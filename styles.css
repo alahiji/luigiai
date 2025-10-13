@@ -153,16 +153,30 @@ body {
 }
 
 /* Hero Section */
+
 .hero {
     padding: 140px 0 80px;
     background: linear-gradient(135deg, #fafbfc 0%, #f0f9f6 100%);
     min-height: 90vh;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .hero-content {
     max-width: 600px;
+    flex: 1 1 320px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-title {
@@ -194,12 +208,11 @@ body {
 }
 
 .hero-visual {
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 400px;
-    height: 400px;
+    position: relative;
+    width: 380px;
+    height: 380px;
+    flex: 0 0 380px;
+    pointer-events: none;
 }
 
 .floating-card {
@@ -593,17 +606,25 @@ body {
     .hero-visual {
         display: none;
     }
-    
+
     .hero-content {
         max-width: 100%;
     }
 }
 
+@media (max-width: 1200px) {
+    .hero-visual {
+        flex: 1 1 320px;
+        width: 320px;
+        height: 320px;
+        margin: 0 auto;
+    }
+}
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: flex;
     }
-    
+
     .nav-links {
         position: absolute;
         top: 100%;
@@ -615,7 +636,7 @@ body {
         box-shadow: var(--shadow-lg);
         display: none;
     }
-    
+
     .nav-links.active {
         display: flex;
     }
@@ -624,27 +645,24 @@ body {
         padding: 100px 0 60px;
         min-height: auto;
     }
-    
-    .hero-title {
-        font-size: 2.5rem;
+
+    .hero-content {
+        text-align: center;
     }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
+
     .hero-buttons {
         flex-direction: column;
+        align-items: stretch;
     }
-    
+
     .hero-buttons a {
         width: 100%;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .about-content {
         grid-template-columns: 1fr;
         gap: 3rem;
